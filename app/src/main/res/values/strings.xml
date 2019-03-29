@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BloodBank</string>
+    <string name="title_activity_donor_form">DonorForm</string>
+    <string name="be_a_donor">Be a Donor</string>
+    <string name="need_blood">Need Blood</string>
+    <string name="informations">Informations</string>
+    <string name="title_activity_registration">registration</string>
+    <string name="donor_information">Donor Information</string>
+
+
+</resources>

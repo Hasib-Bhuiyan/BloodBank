@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btn_need_blood" type="id" />
+    <item name="btn_donor_profile" type="id" />
+    <item name="edt_mobileNumber" type="id" />
+    <item name="btn_saveDonor" type="id" />
+    <item name="dropdownGroup" type="id" />
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <LinearLayout tools:context="com.example.bloodbank.DonorForm"     android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="20dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAlignment="center" android:textSize="40dp" android:text="Donor Information" />
+
+</LinearLayout>
+
+
+    -<LinearLayout android:orientation="vertical" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="100dp">
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginLeft="20dp" android:layout_margin="5dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="0dp" android:textSize="18dp" android:text="Full Name"  android:layout_weight="1"/>
+
+    <EditText android:background="@drawable/input_background" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="1" android:hint="Hasib" android:id="@+id/edt_name" android:padding="5dp"/>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginLeft="20dp" android:layout_margin="5dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="0dp" android:textSize="18dp" android:text="City"  android:layout_weight="1"/>
+
+    <Spinner android:background="@drawable/input_background" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="1" android:id="@+id/dropdownCity"/>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginLeft="20dp" android:layout_margin="5dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="0dp" android:textSize="18dp" android:text="Blood Group"  android:layout_weight="1"/>
+
+    <Spinner android:background="@drawable/input_background" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="1" android:id="@+id/dropdownGroup"/>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginLeft="20dp" android:layout_margin="5dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="0dp" android:textSize="18dp" android:text="Mobile Number"  android:layout_weight="1"/>
+
+    <EditText android:background="@drawable/input_background" android:layout_height="wrap_content" android:layout_width="0dp" android:layout_weight="1" android:hint="01xxxxxxxxx" android:id="@+id/edt_mobileNumber" android:padding="5dp"/>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20dp" android:layout_marginLeft="20dp" android:layout_margin="15dp" android:gravity="center">
+
+    <Button
+        android:id="@+id/btn_saveDonor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="Add"
+        android:textColor="@color/colorPrimary" />
+
+</LinearLayout>
+
+</LinearLayout>
+
+</LinearLayout>
