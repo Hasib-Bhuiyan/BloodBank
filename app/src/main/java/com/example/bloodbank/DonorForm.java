@@ -22,6 +22,7 @@ public class DonorForm extends AppCompatActivity {
 
     Spinner cityChoice;
     Spinner groupChoice;
+    Spinner locationChoice;
 
     EditText Name;
     EditText Mobile;
@@ -29,6 +30,7 @@ public class DonorForm extends AppCompatActivity {
     Button Save;
 
     ProgressBar progressBar;
+    public static int i=1;
 
 
 
@@ -45,6 +47,13 @@ public class DonorForm extends AppCompatActivity {
         cityChoice.setAdapter(adapter);
 
 
+        locationChoice = (Spinner) findViewById(R.id.dropdownLocation);
+
+        String[] location = new String[]{"kalabagan","dhanmondi", "Mohammadpur", "Lalmatia","Mirpur", "banani", "Gulshan", "Mohakhali", "Pachlaish", "Agrabad", "Kulshi", "raj1", "raj2"};
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, location);
+        locationChoice.setAdapter(adapter3);
+
+
         groupChoice = (Spinner) findViewById(R.id.dropdownGroup);
         String[] group = new String[]{"O+","O-", "A+", "B+","A-", "B-", "AB+", "AB-"};
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, group);
@@ -59,19 +68,20 @@ public class DonorForm extends AppCompatActivity {
             public void onClick(View v) {
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Donors");
 
-                String postid = reference.push().getKey();
+                String postid =  String.valueOf(i);
 
                 HashMap<String, Object> hashMap = new HashMap<>();
-                hashMap.put("Full Name", Name.getText().toString());
+                hashMap.put("Full_Name", Name.getText().toString());
                 hashMap.put("City", cityChoice.getSelectedItem().toString());
-                hashMap.put("Blood Group", groupChoice.getSelectedItem().toString());
+                hashMap.put("Location", locationChoice.getSelectedItem().toString());
+                hashMap.put("Blood_Group", groupChoice.getSelectedItem().toString());
                 hashMap.put("Number", Mobile.getText().toString());
 
 
                 reference.child(postid).setValue(hashMap);
 
                 Toast.makeText(DonorForm.this,"Added Successfully", Toast.LENGTH_LONG).show();
-
+                i++;
 
 
 

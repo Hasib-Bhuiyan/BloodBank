@@ -14,6 +14,7 @@ import java.math.MathContext;
 
 public class MainActivity extends AppCompatActivity {
     Button buttonDonor;
+    Button needBlood;
     public static String donorId="no";
     SharedPreferences sharedPreferences;
 
@@ -24,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        needBlood = (Button) findViewById(R.id.btn_need_blood);
+        needBlood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, NeedBlood.class));
+            }
+        });
 
 
         buttonDonor = (Button) findViewById(R.id.btn_donor_profile);
