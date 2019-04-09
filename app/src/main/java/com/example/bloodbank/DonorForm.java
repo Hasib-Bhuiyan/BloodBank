@@ -1,6 +1,7 @@
 package com.example.bloodbank;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class DonorForm extends AppCompatActivity {
+    public static final String SHARED_PREFS= "sharedPrefs";
+    public static int i=1;
+    public static final String val= "";
 
     Spinner cityChoice;
     Spinner groupChoice;
@@ -30,7 +34,7 @@ public class DonorForm extends AppCompatActivity {
     Button Save;
 
     ProgressBar progressBar;
-    public static int i=1;
+
 
 
 
@@ -38,6 +42,7 @@ public class DonorForm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donor_form);
+        loadData();
 
 
         cityChoice = (Spinner) findViewById(R.id.dropdownCity);
@@ -82,12 +87,28 @@ public class DonorForm extends AppCompatActivity {
 
                 Toast.makeText(DonorForm.this,"Added Successfully", Toast.LENGTH_LONG).show();
                 i++;
+                saveData();
 
 
 
 
             }
             });
+    }
+    public void saveData()
+    {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+
+        editor.putInt(val,i);
+        editor.apply();
+
+    }
+    public void loadData()
+    {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        i=sharedPreferences.getInt(val,i);
+
     }
 }
 

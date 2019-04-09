@@ -58,13 +58,13 @@ public class NeedBlood extends AppCompatActivity {
                 final String location = locationChoice.getSelectedItem().toString();
                 //Toast.makeText(NeedBlood.this,group, Toast.LENGTH_LONG).show();
 
-                for(int i=1; i<100; i++) {
+                for(int i=0; i<100; i++) {
 
-                    FirebaseDatabase.getInstance().getReference().child("Donors").child(""+i)
+                    FirebaseDatabase.getInstance().getReference().child("Donors").child(i+"")
                             .addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
-                                    String check="";
+
                                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                         String x = dataSnapshot.child("City").getValue(String.class);
                                         String y = dataSnapshot.child("Blood_Group").getValue(String.class);
@@ -79,13 +79,8 @@ public class NeedBlood extends AppCompatActivity {
                                             donorloc[tablec]=z;
                                             tablec++;
                                         }
-
-
-
-
-
-
                                     }
+
                                     startActivity(new Intent(NeedBlood.this, DonorList.class));
 
 
@@ -96,6 +91,7 @@ public class NeedBlood extends AppCompatActivity {
                                 }
                             });
                 }
+                //startActivity(new Intent(NeedBlood.this, DonorList.class));
 
             }
         });

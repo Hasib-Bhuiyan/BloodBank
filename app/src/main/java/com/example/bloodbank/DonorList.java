@@ -20,7 +20,7 @@ public class DonorList extends AppCompatActivity {
         setContentView(R.layout.activity_donor_list);
         setupUILogin();
 
-        for(int i = 0; i < NeedBlood.tablec; i++){
+        for(int i = 0; i < NeedBlood.tablec; i+=5){
 
             TableRow tr =  new TableRow(this);
             TextView c1 = new TextView(this);
